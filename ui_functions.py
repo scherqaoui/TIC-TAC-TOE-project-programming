@@ -30,7 +30,7 @@ def create_restart_button(window, start_new_game):
 
 def create_game_buttons(btns_frame, label, players, next_turn):
     game_btns = []
-    # label.cget("text")[0] donne "x" or "o"
+    #the game_btns list
     for row in range(3):
         row_buttons = []
         for col in range(3):
@@ -38,6 +38,7 @@ def create_game_buttons(btns_frame, label, players, next_turn):
                             command=lambda label=label, players=players, row=row, col=col: 
                                 next_turn(game_btns, label.cget("text")[0], players, label, row, col))
                 # Create a button with a specific command linked to the next_turn function
+                # label.cget("text")[0] donne "x" or "o"
             button.grid(row=row, column=col)
             # Place the button in the grid
             row_buttons.append(button)
